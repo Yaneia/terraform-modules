@@ -1,9 +1,9 @@
 locals {
   service_names    = ["api", "ui"]
-  ecs_cluster_name = "my-ecs-cluster"
+  ecs_cluster_name = "dev"
 }
 
-module "this" {
+module "get_docker_image_tag_by_task_id" {
   for_each = toset(local.service_names)
 
   source = "../"
